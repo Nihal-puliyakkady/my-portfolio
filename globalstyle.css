@@ -84,7 +84,8 @@ p {
 	color: crimson;
 }
 
-#header {
+
+ #header {
 	position: fixed;
 	z-index: 1000;
 	left: 0;
@@ -186,7 +187,7 @@ p {
 	width: 100%;
 	border-radius: 50%;
 	border: 3px solid white;
-	animation: hamburger_puls 1s ease infinite;
+	animation:  ease infinite;
 }
 
 #header .hamburger .bar {
@@ -223,7 +224,7 @@ p {
 
 #header .hamburger.active .bar::after {
 	top: 0;
-}
+} 
 
 #hero {
 	background-image: url('./assets/images/hero-bg.png');
@@ -414,9 +415,8 @@ p {
 }
 
 #projects .project-img {
-	flex-basis: 20%;
-	height: 200px;
-	width: 100%;
+	flex-basis: 50%;
+	height: 300px;
 	overflow: hidden;
 	position: relative;
 }
@@ -492,18 +492,7 @@ p {
 	border: 7px solid crimson;
 	z-index: -1;
 }
-
-#contact .contact {
-	flex-direction: column;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-#contact contact.items {
-	width: 400px;
-}
-
-#contact .contact-items {
+#contact .contact-item {
 	width: 80%;
 	padding: 20px;
 	text-align: center;
@@ -514,36 +503,27 @@ p {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	box-shadow: 0px 0px 0px #0000;
-	transition: .3s ease box-shadow;
+	box-shadow: 0px 0px 18px 0 #0000002c;
+	transition: 0.3s ease box-shadow;
 }
-
-#contact .contact-items:hover {
-	box-shadow: 0px 0px 0px #0000;
-
+#contact .contact-item:hover {
+	box-shadow: 0px 0px 5px 0 #0000002c;
 }
-
 #contact .icon {
 	width: 70px;
 	margin: 0 auto;
 	margin-bottom: 10px;
 }
-
 #contact .contact-info h1 {
 	font-size: 2.5rem;
 	font-weight: 500;
 	margin-bottom: 5px;
 }
-
 #contact .contact-info h2 {
 	font-size: 1.3rem;
 	line-height: 2rem;
-	font-weight: 500;
+	font-weight:500;
 }
-
-
-
-
 #footer {
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 }
@@ -616,12 +596,11 @@ p {
 	}
 }
 
-@media only screen and(min-width: 768px) {
+@media only screen and (min-width: 768px) {
 	.cta {
 		font-size: 2.5rem;
 		padding: 20px 60px;
 	}
-
 	h1.section-title {
 		font-size: 6rem;
 	}
@@ -630,20 +609,19 @@ p {
 		font-size: 7rem;
 	}
 
-	#service .service-bottom .services-item {
+	#services .service-bottom .service-item {
 		flex-basis: 45%;
 		margin: 2.5%;
+		display: flex;
 	}
 
-	#project .projects-items {
+	#projects .project-item {
 		flex-direction: row;
 	}
-
-	#project .project-item:nth-child(even) {
+	 #projects .project-item:nth-child(even){
 		flex-direction: row-reverse;
-	}
-
-	#project .projects-items {
+	} 
+	#projects .project-item {
 		height: 400px;
 		margin: 0;
 		width: 100%;
@@ -655,7 +633,7 @@ p {
 
 	}
 
-	#project .all-projects .project-img {
+	#projects .all-projects .project-img {
 		height: 100%;
 	}
 
@@ -663,10 +641,77 @@ p {
 		flex-direction: row;
 	}
 
-	#about .col-left .about-img {
+	#about .col-left .about-img::after {
 		left: -45%;
-
-
-
+		top: 34px;
+		height: 98%;
+		width: 98%;
+		border: 10px solid crimson;
 	}
-}
+	#about .col-right{
+		text-align: left;
+		padding: 30px;
+	}
+	#about .col-right h1{
+		text-align: left;
+	}
+	#contact .contact{
+		flex-direction: column;
+		padding: 100px 0;
+		align-items: center;
+		justify-content: center;
+		min-width: 20vh;
+	}
+	#contact .contact-items{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		padding: 20px;
+		margin: 0;
+	}
+	#contact .contact-items{
+		margin: 20px;
+		flex-direction: row;
+	}
+	#contact .contact-item .icon{
+		height: 100px;
+		width: 100px;
+	}
+	#contact .contact-item .icon img{
+		object-fit: contain;
+	}
+	#contact .contact-item .contact-info{
+		width: 100%;
+		text-align: center;
+		padding-left: 20px;
+	}
+	}
+		@media only screen and (min-width: 1200px) {
+			
+			#header .hamburger {
+				display: none;
+			}
+			#header .nav-list ul {
+				position: initial;
+				display: block;
+				height: auto;
+				width: fit-content;
+				background-color: transparent;
+			}
+			#header .nav-list ul li {
+				display: inline-block;
+			}
+			#header .nav-list ul li a {
+				font-size: 1.8rem;
+			}
+			#header .nav-list ul a:after {
+				display: none;
+			}
+			
+		
+			#services .service-bottom .service-item {
+				flex-basis: 22%;
+				margin: 1.5%;
+			}
+		}
+	
